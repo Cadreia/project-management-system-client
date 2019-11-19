@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="row" style="min-height: 100vh;">
+    <div class="col-md-4 info">
+
+    </div>
+    <div class="col-md-8">
+      <form [mustMatch]="['password', 'confirmPassword']" class="w-50 mx-auto" name="responseResetForm"
+        #responseResetForm="ngForm" (ngSubmit)="responseResetForm.valid && onSubmit(responseResetForm)">
+        <h4 class="text-center mb-3">Change Your Password</h4>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" [(ngModel)]="model.email" #email="ngModel"
+            [ngClass]="{ 'is-invalid': (submitted || email.touched) && email.errors }" required email />
+          <div *ngIf="(submitted || email.touched) && email.errors" class="invalid-feedback">
+            <div *ngIf="email.errors.required"><small>Email is required</small></div>
+            <div *ngIf="email.errors.email"><small>Provided email is incorrect</small></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control" [(ngModel)]="model.password"
+            #password="ngModel" [ngClass]="{ 'is-invalid': (submitted || password.touched) && password.errors }"
+            required minlength="6" />
+          <div *ngIf="(submitted || password.touched) && password.errors" class="invalid-feedback">
+            <div *ngIf="password.errors.required"><small>Password is required</small></div>
+            <div *ngIf="password.errors.minlength"><small>Password must have at least 6 characters</small></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+            [(ngModel)]="model.confirmPassword" #confirmPassword="ngModel"
+            [ngClass]="{ 'is-invalid': (submitted || confirmPassword.touched) && confirmPassword.errors }" required />
+          <div *ngIf="(submitted || confirmPassword.touched) && confirmPassword.errors" class="invalid-feedback">
+            <div *ngIf="confirmPassword.errors.required"><small>Confirm Password is required</small></div>
+            <div *ngIf="confirmPassword.errors.mustMatch"><small>Passwords donot match</small></div>
+          </div>
+        </div>
+        <div class="float-right">
+          <button [disabled]="loading || responseResetForm.invalid" class="btn btn-success">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-3"></span>
+            Change Password
+          </button>
+          <button class="btn btn-light" type="reset">Clear</button>
+        </div><br><br>
+      </form>
+    </div>
+  </div>
+</div>

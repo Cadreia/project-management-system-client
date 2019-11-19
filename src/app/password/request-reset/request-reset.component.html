@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row" style="min-height: 100vh;">
+    <div class="col-md-4 info">
+
+    </div>
+    <div class="col-md-8">
+      <form class="w-50 mx-auto" #requestResetForm=ngForm (ngSubmit)="onSubmit()">
+        <h4 class="text-center mb-3">Request For Password Reset</h4>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" [(ngModel)]="form.email" #email="ngModel"
+            [ngClass]="{ 'is-invalid': (submitted || email.touched) && email.errors }" required email />
+          <div *ngIf="(submitted || email.touched) && email.errors" class="invalid-feedback">
+            <div *ngIf="email.errors.required"><small>Email is required</small></div>
+            <div *ngIf="email.errors.email"><small>Provided email is incorrect</small></div>
+          </div>
+        </div>
+        <div class="float-right">
+          <button [disabled]="loading || requestResetForm.invalid" class="btn btn-success">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-3"></span>
+            Send Password Reset Link
+          </button>
+          <button class="btn btn-light" (click)="onReset(requestResetForm)">Clear</button>
+        </div><br><br>
+      </form>
+    </div>
+  </div>

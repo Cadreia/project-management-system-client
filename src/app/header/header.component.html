@@ -1,0 +1,24 @@
+<nav class="navbar navbar-light bg-light d-flex justify-content-between">
+  <a class="navbar-brand"><span class="logo">D</span>Manager</a>
+
+  <div>
+    <a *ngIf="isLoggedIn" class="nav-link cursor-pointer" [routerLink]="['/home']"
+      routerLinkActive="router-link-active">Home <span class="sr-only">(current)</span></a>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <a *ngIf="!isLoggedIn" class="nav-link cursor-pointer" [routerLink]="['/login']">Login</a>
+    <a *ngIf="isLoggedIn" class="nav-link cursor-pointer" (click)="logout()">Logout</a>
+    <a *ngIf="isLoggedIn" class="nav-link cursor-pointer" [routerLink]="['/profile']"
+      routerLinkActive="router-link-active">Profile</a>
+    <a *ngIf="isLoggedIn" class="nav-link dropdown-toggle cursor-pointer" href="#" id="navbarDropdownMenuLink"
+      role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown link
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <a class="dropdown-item cursor-pointer" href="#">Action</a>
+      <a class="dropdown-item cursor-pointer" href="#">Another action</a>
+      <a class="dropdown-item cursor-pointer" href="#">Something else here</a>
+    </div>
+  </div>
+</nav>

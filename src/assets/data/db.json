@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Catherine",
+      "lastName": "Hills",
+      "username": "cath",
+      "email": "cath@yahoo.com",
+      "idNum": 123456789,
+      "password": "cath_hills"
+    },
+    {
+      "id": 2,
+      "firstName": "Peter",
+      "lastName": "Brave",
+      "username": "peterB",
+      "email": "peterB@yahoo.com",
+      "idNum": 987654321,
+      "password": "peteDbrave"
+    },
+    {
+      "firstName": "terry",
+      "lastName": "mills",
+      "username": "terriah",
+      "email": "terry@gmail.com",
+      "password": "123456",
+      "confirmPassword": "999999",
+      "id": 3
+    },
+    {
+      "firstName": "big",
+      "lastName": "none",
+      "username": "user",
+      "email": "",
+      "password": "pass",
+      "confirmPassword": "pass",
+      "id": 4
+    },
+    {
+      "firstName": "first",
+      "lastName": "last",
+      "username": "u",
+      "email": "email@g",
+      "password": "password",
+      "confirmPassword": "password",
+      "id": 5
+    }
+  ]
+}
