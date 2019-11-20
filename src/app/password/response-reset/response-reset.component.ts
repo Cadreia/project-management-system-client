@@ -11,8 +11,8 @@ import { AuthenticationService } from 'src/app/_services/authentication/authenti
   styleUrls: ['./response-reset.component.scss']
 })
 export class ResponseResetComponent implements OnInit {
-  private submitted = false;
-  private loading = false;
+  submitted = false;
+  loading = false;
   public form: NgForm;
   model = {
     email: null,

@@ -9,9 +9,9 @@ import { SnotifyService } from 'ng-snotify';
   styleUrls: ['./request-reset.component.scss']
 })
 export class RequestResetComponent implements OnInit {
-  private submitted = false;
-  private loading = false;
-  private successAction: Observable<any>;
+  submitted = false;
+  loading = false;
+  successAction: Observable<any>;
   errorAction;
 
   constructor(

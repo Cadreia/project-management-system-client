@@ -1,3 +1,6 @@
 <app-header></app-header>
 <ng-snotify></ng-snotify>
+<button *ngIf="showInstallPrompt" (click)="installPwa()">
+  Install
+</button>
 <router-outlet></router-outlet>
